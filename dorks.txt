@@ -1,0 +1,180 @@
+************************
+** FTP PASSWORD DORKS **
+************************
+
++htpasswd +WS_FTP.LOG filetype:log
+
+"index of/" "ws_ftp.ini" "parent directory"
+
+Substitute vulnerablesite.com with your site you want to search)
+"allinurl: "Vulnerablesite.com" WS_FTP.LOG filetype:log"
+
+
+
+*****************************
+** SQL PASSWORD DUMP DORKS **
+*****************************
+
+1.) SQL dumps saved to database search. (Some of the more common passwords for you):
+
+a.) "123456" = hashed password
+ext:sql intext:mad:gmail.com intext:e10adc3949ba59abbe56e057f20f883e
+
+b.) "654321" = hashed password
+ext:sql intext:mad:gmail.com intext:c33367701511b4f6020ec61ded352059
+
+c.) "password" = hashed password
+ext:sql intext:mad:gmail.com intext:5f4dcc3b5aa765d61d8327deb882cf99
+
+d.) "12345678" = hashed password
+ext:sql intext:mad:gmail.com intext:25d55ad283aa400af464c76d713c07ad
+
+e.) "iloveyou" = hashed password
+ext:sql intext:mad:gmail.com intext:f25a2fc72690b780b2a14e140ef6a9e0
+
+
+2.) Variation of above search:
+
+a.) ext:sql intext:"INSERT INTO" intext:mad:gmail.com intext:password
+
+b.) ext:sql intext:"INSERT INTO" intext:mad:yahoo.com intext:password
+
+c.) ext:sql intext:"INSERT INTO" intext:mad:hotmail.com intext:password
+
+d.) ext:sql intext:"INSERT INTO" intext:mad:att.net intext:password
+
+e.) ext:sql intext:"INSERT INTO" intext:mad:comcast.net intext:password
+
+f.) ext:sql intext:"INSERT INTO" intext:mad:verizon.net intext:password
+
+
+
+*************************
+** PASSWORD FILE DORKS **
+*************************
+
+1.) Search for Microsoft Excel data file:
+
+"Login: *" "password =*" filetype: xls
+
+
+2.) Search for auth_user_file:
+
+allinurl: auth_user_file.txt
+
+
+3.) Search for username/password saved in Microsoft Excel files:
+
+filetype: xls inurl: "password.xls"
+
+
+4.) Search for login pages:
+
+intitle: login password
+
+
+5.) Search for "master password" page:
+
+intitle: "Index of" master.passwd
+
+
+6.) Search for backup directory:
+
+index of /backup
+
+
+7.) Search for password backup file index:
+
+intitle:index.of passwd.bak
+
+
+8.) Search for password databases:
+
+intitle:index.of pwd.db
+
+intitle:"index of" pwd.db
+
+
+9.) Search for /etc/passwd/ index:
+
+intitle:"index of .. etc" passwd
+
+
+10.) Search for plaintext password file:
+
+index.of passlist.txt
+
+inurl:passlist.txt
+
+
+11.) Search for hidden documents/password files:
+
+index.of.secret
+
+index.of.private
+
+
+12.) Search for PhpMyAdmin files:
+
+"# PhpMyAdmin MySQL-Dump" filetype: txt
+
+
+13.) Hidden Superuser (root) data files:
+
+inurl:ipsec.secrets-history-bugs
+
+inurl:ipsec.secrets "holds shared secrets"
+
+
+14.) Find the information files:
+
+inurl:ipsec.conf-intitle:manpage
+
+
+15.) Search for a stored password in a database:
+
+filetype:ldb admin
+
+
+16.) Search for admin.php file:
+
+inurl:search/admin.php
+
+
+17.) Search for password log files:
+
+inurl:password.log filetype:log
+
+
+18.) Search for Hkey_Current_User in registry files:
+
+filetype: reg HKEY_CURRENT_USER username
+
+
+19.) Search for username/password file backups:
+
+"Http://username: password @ www ..." filetype: bak inurl: "htaccess | passwd | shadow | ht users"
+
+
+20.) Search for username/password files:
+
+filetype:mdb inurl:”account|users|admin|administrators|passwd|password” mdb files
+
+
+21.) Search for Microsoft Frontpage passwords:
+
+ext:pwd inurl:(service|authors|administrators|users) “# -FrontPage-”
+
+
+22.) Search for SQL database Code and passwords:
+
+filetype: sql ( "passwd values ****" |" password values ****" | "pass values ****")
+
+
+23.) Search for e-mail account files:
+
+intitle: "Index Of"-inurl: maillog
+
+
+https://gbhackers.com/latest-google-dorks-list/
+https://www.nextleveltricks.com/latest-google-dorks-list/
